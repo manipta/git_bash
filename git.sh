@@ -39,12 +39,12 @@ do
 				git branch
 				echo "Enter remote branch name (e.g., main):"
         		read remote_branch
-        		r=$(git push origin "$remote_branch")
-				if ["$r" -ne "0"]
+        		result=$(git push origin "$remote_branch")
+				if [ "$result" -ne "0" ]
 				then
 					echo "wanna do forcefully?(y/n)"
 					read a
-					if ["$a" -eq "y"]
+					if [ "$a" -eq "y" ]
 					then
 						git push origin -f "$remote_branch"
 					fi

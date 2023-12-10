@@ -40,7 +40,7 @@ do
 				echo "Enter remote branch name (e.g., main):"
         		read remote_branch
         		result=$(git push origin "$remote_branch")
-				if [ "$result" -ne "0" ]
+				if [ ! "$result" ]
 				then
 					echo "wanna do forcefully?(y/n)"
 					read a

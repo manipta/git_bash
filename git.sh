@@ -39,14 +39,23 @@ do
 				git branch
 				echo "Enter remote branch name (e.g., main):"
         		read remote_branch
-        		git push origin "'$remote_branch'"
+        		r=git push origin "$remote_branch"
+				if ["$r" -ne "0"]
+				then
+					echo "wanna do forcefully?(y/n)"
+					read a
+					if ["$a" -eq "y"]
+					then
+						git push origin -f "$remote_branch"
+					fi
+				fi
         		;;
 			5) 
 				echo "Existing Braches:"
 				git branch
 				echo "Enter Branch to pull from:"
 				read remote_branch
-				git pull origin "'$remote_branch'"
+				git pull origin "$remote_branch"
 				;;
 			6)
 				echo "Existing Braches:"

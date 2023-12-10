@@ -36,7 +36,7 @@ do
         		;;
     		4)
        	 		echo "Existing Braches:"
-				git -r branch
+				git branch -r
 				echo "Enter remote branch name (e.g., main):"
         		read remote_branch
         		result=$(git push origin "$remote_branch")
@@ -56,7 +56,7 @@ do
         		;;
 			5) 
 				echo "Existing Braches:"
-				git -r branch
+				git branch -r
 				echo "Enter Branch to pull from:"
 				read remote_branch
 				git pull origin "$remote_branch"

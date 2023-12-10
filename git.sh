@@ -79,14 +79,14 @@ do
 					echo " $name Created."
 				fi
         		;;
-    	
+
 			8)
 				echo "Existing Braches:"
 				git branch
 				echo "Enter Branch name(present in above):"
 				read name
 				if [ "$(git branch | grep -c -w $name)" -gt "0" ]
-				then	
+				then
 					echo "Switching Branch..."
 					git checkout $name
 					echo "Switched to  $name."
@@ -142,7 +142,7 @@ do
 	else
 		echo "1. Git init"
 		echo "2. Exit"
-		
+
 		read choice
 
 		case $choice in

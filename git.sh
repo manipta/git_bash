@@ -40,14 +40,18 @@ do
 				echo "Enter remote branch name (e.g., main):"
         		read remote_branch
         		result=$(git push origin "$remote_branch")
-				if [ ! "$result" ]
+				if [ "$result" ]
 				then
 					echo "wanna do forcefully?(y/n)"
 					read a
-					if [ "$a" -eq "y" ]
-					then
+					case $a in
+					y)
 						git push origin -f "$remote_branch"
-					fi
+						;;
+					*)
+						echo "Invaild Option...not able to delete"
+						;;
+					esac
 				fi
         		;;
 			5) 
